@@ -1,23 +1,24 @@
 import React from "react";
 import { Grid2, Card, CardContent, Typography, CardMedia } from "@mui/material";
-import mainCourse from "../assets/main-course.jpg";
+import { categories } from "../data/Data";
 
-const categories = [
-  { title: "Breakfast", image: "breakfast.jpg" },
-  { title: "Lunch", image: "lunch.jpg" },
-  { title: "Main Course", image: mainCourse },
-  { title: "Snacks", image: "snacks.jpg" },
-];
+const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
 
 const CategoryGrid = () => {
   return (
-    <Grid2 container spacing={2} justifyContent="center" margin={1}>
+    <Grid2
+      container
+      spacing={2}
+      justifyContent="center"
+      sx={{ maxWidth: 700, margin: "1rem auto" }}
+    >
       {categories.map((category, index) => (
         <Grid2 item xs={12} sm={6} md={4} key={index}>
           <Card>
             <CardMedia
               component="img"
               height="140"
+              sx={{ width: 200 }}
               image={category.image}
               alt={category.title}
             />
