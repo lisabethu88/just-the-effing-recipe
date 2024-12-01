@@ -1,0 +1,114 @@
+import { Box, Button, Typography } from "@mui/material";
+import React, { useState } from "react";
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
+import { dietOptions } from "../data/Data";
+import AIFeedback from "./AIFeedback";
+
+const AISection = ({ recipe }) => {
+  const [showFeedback, setShowFeedback] = useState(false);
+  const [diet, setDiet] = useState("");
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setShowFeedback(true);
+    console.log("Form submitted");
+  };
+  return (
+    <Box
+      sx={{
+        width: "100%",
+        backgroundColor: "#e0ddd5",
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: "column",
+        alignItems: "center",
+        textAlign: "center",
+        padding: 5,
+        gap: 2,
+      }}
+    >
+      {!showFeedback && (
+        <>
+          <Typography
+            variant="h1"
+            fontFamily='"Goudy Bookletter 1911", serif'
+            fontSize={{ xs: "2rem", sm: "3rem" }}
+            fontWeight={600}
+            letterSpacing={1}
+            color={"#d4452c"}
+            sx={{
+              textWrap: "wrap",
+            }}
+            textAlign={"center"}
+          >
+            Customize this Recipe with OpenAI
+          </Typography>
+          <Typography variant="body1" sx={{ maxWidth: 600 }}>
+            Customize this Recipe with OpenAI Select your diet below, and OpenAI
+            will provide tailored tips to adjust this recipe just for you. Get
+            suggestions on ingredient swaps, portion adjustments, and more to
+            match your dietary needs!
+          </Typography>
+
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 2,
+            }}
+          >
+            <Autocomplete
+              disablePortal
+              options={dietOptions}
+              sx={{
+                width: 300,
+                backgroundColor: "white",
+                fontFamily: "Nunito Sans",
+              }}
+              getOptionLabel={(option) => option.label}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  label="Diet"
+                  sx={{ "& input": { fontFamily: "Nunito Sans" } }}
+                />
+              )}
+              onChange={(event, newValue) =>
+                setDiet(newValue ? newValue.label : "")
+              }
+            />
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              sx={{
+                backgroundColor: "#d4452c",
+                color: "#e0ddd5",
+                fontWeight: 800,
+                letterSpacing: 1,
+                fontFamily: "Nunito Sans",
+                borderRadius: 0,
+              }}
+              disabled={!diet}
+            >
+              Submit
+            </Button>
+          </Box>
+        </>
+      )}
+      {showFeedback && (
+        <AIFeedback
+          recipe={recipe}
+          diet={diet}
+          setShowFeedback={setShowFeedback}
+          setDiet={setDiet}
+        />
+      )}
+    </Box>
+  );
+};
+
+export default AISection;

@@ -1,19 +1,13 @@
 import React from "react";
-import {
-  Grid2,
-  Card,
-  CardContent,
-  Typography,
-  CardMedia,
-  Divider,
-} from "@mui/material";
-import { Link } from "react-router-dom";
+import { Grid2, Card, CardContent, Typography, CardMedia } from "@mui/material";
+import { Link, useLocation } from "react-router-dom";
 
-const CategoryGrid = ({ data }) => {
+const RecipeGrid = ({ data }) => {
+  const location = useLocation();
   return (
     <Grid2 container spacing={2} justifyContent="center" sx={{ marginY: 3 }}>
-      {data.length > 0 &&
-        data.map((category, index) => (
+      {data &&
+        data.map((meal, index) => (
           <Grid2
             item
             xs={12}
@@ -32,7 +26,11 @@ const CategoryGrid = ({ data }) => {
               boxShadow: 2,
             }}
           >
-            <Link to={category.path} className="no-underline !important">
+            <Link
+              to={`${location.pathname}/${meal.id}`}
+              className="no-underline !important"
+              state={{ meal }}
+            >
               <Card
                 elevation={6}
                 sx={{
@@ -47,8 +45,8 @@ const CategoryGrid = ({ data }) => {
                 <CardMedia
                   component="img"
                   sx={{ width: 250, height: 150 }}
-                  image={category.image}
-                  alt={category.title}
+                  image={meal.image}
+                  alt={meal.title}
                 />
                 <CardContent sx={{ backgroundColor: "#e0ddd5", width: 250 }}>
                   <Typography
@@ -60,23 +58,21 @@ const CategoryGrid = ({ data }) => {
                       color: "#d4452c",
                       fontWeight: 800,
                       letterSpacing: 2,
+                      fontSize: "1rem",
                       // textShadow: "1px 2px 0px rgba(255,124,61,0.24)",
                     }}
                   >
-                    {category.title}
+                    {meal.title}
                   </Typography>
-                  {category.description && <Divider sx={{ marginY: 2 }} />}
-
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: "text.secondary",
-                      fontFamily: "Nunito Sans",
-                      letterSpacing: 1,
-                    }}
-                  >
-                    {category.description}
-                  </Typography>
+                  {/* <Divider sx={{ marginY: 2 }} />
+                    <Typography
+                      variant="body2 "
+                      sx={{
+                        color: "text.secondary",
+                        fontFamily: "Nunito Sans",
+                        letterSpacing: 1,
+                      }}
+                    ></Typography> */}
                 </CardContent>
               </Card>
             </Link>
@@ -86,4 +82,4 @@ const CategoryGrid = ({ data }) => {
   );
 };
 
-export default CategoryGrid;
+export default RecipeGrid;
