@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Send+Flowers&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -13,4 +16,60 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.category-grid {
+  background-image: url("/src/assets/picnic-bg.jpg");
+  background-size: 100px;
+  background-position: top left;
+  background-repeat: repeat;
+  width: fit-content;
+}
+
+h6 {
+  font-family: "Nunito Sans" !important;
+}
+
+#root {
+  min-height: 100vh;
+  height: 100%;
+  width: 100vw;
+  position: relative;
+}
+
+main {
+  width: 100% !important;
+  height: 100% !important;
+  margin-top: 100px !important;
+  padding-bottom: 100px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  gap: 1 !important;
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+.wiggle-button {
+  animation: wiggle 1s infinite ease-in-out;
+}
+
+p,
+li {
+  font-family: Nunito Sans !important;
 }
