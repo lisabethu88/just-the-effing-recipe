@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Typography, CircularProgress, Box } from "@mui/material";
 import BackButton from "./BackButton";
 import axios from "axios";
+import DisclaimerModal from "./DisclaimerModal";
 
 const AIFeedback = ({ recipe, diet, setShowFeedback, setDiet }) => {
   const [feedback, setFeedback] = useState("");
@@ -107,27 +108,25 @@ Source: ${recipe.sourceName} (${recipe.sourceUrl})
         {" "}
         Tips on making your meal {diet} friendly!
       </Typography>
-
       {/* Show loading spinner */}
       {loading && (
         <Box sx={{ display: "flex", justifyContent: "center", marginTop: 2 }}>
           <CircularProgress />
         </Box>
       )}
-
       {/* Show error message */}
       {error && (
         <Typography variant="body1" color="error" sx={{ marginTop: 2 }}>
           {error}
         </Typography>
       )}
-
       {/* Show feedback only when available */}
       {feedback && (
         <Typography variant="body1" sx={{ margin: "20px auto", maxWidth: 800 }}>
           {feedback}
         </Typography>
       )}
+      <DisclaimerModal />
     </Box>
   );
 };
