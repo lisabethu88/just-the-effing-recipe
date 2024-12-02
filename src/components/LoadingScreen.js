@@ -17,7 +17,7 @@ const LoadingScreen = () => {
         }}
         textAlign={"center"}
       >
-        Loading...
+        Loading
       </Typography>
       <CircularProgress sx={{ color: "#314f37" }} />
     </Box>

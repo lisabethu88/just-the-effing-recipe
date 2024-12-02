@@ -98,6 +98,7 @@ const Recipe = () => {
             color={"#314f37"}
             textAlign={"left"}
             letterSpacing={1}
+            marginBottom={1}
             sx={{
               textWrap: "pretty",
             }}
@@ -119,6 +120,7 @@ const Recipe = () => {
             color={"#314f37"}
             textAlign={"left"}
             letterSpacing={1}
+            marginBottom={1}
             sx={{
               textWrap: "pretty",
             }}
@@ -128,9 +130,12 @@ const Recipe = () => {
           <Typography sx={{ maxWidth: 300 }}>
             {recipe.analyzedInstructions.length > 0 ? (
               recipe.analyzedInstructions[0].steps.map((step) => (
-                <p key={step.number}>
-                  {step.number}. {step.step}
-                </p>
+                <Typography key={step.number}>
+                  <Typography variant={"span"} fontWeight={800} color="#d4452c">
+                    {step.number}.
+                  </Typography>{" "}
+                  {step.step}
+                </Typography>
               ))
             ) : (
               <p>No instructions available.</p>

@@ -3,6 +3,7 @@ import { Typography, CircularProgress, Box } from "@mui/material";
 import BackButton from "./BackButton";
 import axios from "axios";
 import DisclaimerModal from "./DisclaimerModal";
+import LoadingScreen from "./LoadingScreen";
 
 const AIFeedback = ({ recipe, diet, setShowFeedback, setDiet }) => {
   const [feedback, setFeedback] = useState("");
@@ -88,7 +89,7 @@ Source: ${recipe.sourceName} (${recipe.sourceUrl})
 
     handleFetch();
     console.log("recipe", recipe, "diet", diet);
-  }, [recipe, diet]); // Add dependencies
+  }, [recipe, diet]);
 
   return (
     <Box sx={{ textAlign: "center" }}>
@@ -110,15 +111,22 @@ Source: ${recipe.sourceName} (${recipe.sourceUrl})
       </Typography>
       {/* Show loading spinner */}
       {loading && (
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            marginTop: 2,
-            color: "#d4452c",
-          }}
-        >
-          <CircularProgress />
+        <Box component="main">
+          <Typography
+            variant="h1"
+            fontFamily='"Goudy Bookletter 1911", serif'
+            fontSize={"2rem"}
+            fontWeight={600}
+            letterSpacing={1}
+            color={"#d4452c"}
+            sx={{
+              textWrap: "wrap",
+            }}
+            textAlign={"center"}
+          >
+            Loading
+          </Typography>
+          <CircularProgress sx={{ color: "#314f37" }} />
         </Box>
       )}
       {/* Show error message */}
