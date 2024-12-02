@@ -7,6 +7,7 @@ import ai_gif from "../assets/ai_gif.gif";
 import robot from "../assets/robot.png";
 
 const Home = () => {
+  
   return (
     <Box component="main">
       <HeroSection />
@@ -25,7 +26,7 @@ const Home = () => {
         <Typography
           variant="h1"
           fontFamily='"Goudy Bookletter 1911", serif'
-          fontSize={{ xs: "2rem", sm: "3rem" }}
+          fontSize="2rem"
           fontWeight={600}
           letterSpacing={1}
           color={"#314f37"}
@@ -36,7 +37,7 @@ const Home = () => {
         >
           Transform Any Recipe to Suit Your Diet with AI!
         </Typography>
-        <Typography sx={{ fontFamily: "Nunito Sans" }}>
+        <Typography textAlign={"center"} sx={{ fontFamily: "Nunito Sans" }}>
           Our intelligent recipe assistant can adapt any recipe to your dietary
           needs, whether it's vegan, gluten-free, or more.
         </Typography>
@@ -47,7 +48,8 @@ const Home = () => {
             flexWrap: "wrap",
             alignItems: "center",
             justifyContent: "center",
-            gap: 2,
+            gap: 3,
+            margin: 2,
           }}
         >
           <Box
@@ -72,8 +74,8 @@ const Home = () => {
             component="img"
             src={robot}
             sx={{
-              maxWidth: 250,
-              height: 250,
+              maxWidth: 300,
+              height: 300,
               marginBottom: 3,
             }}
           ></Box>

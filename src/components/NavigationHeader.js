@@ -54,7 +54,11 @@ const NavigationHeader = () => {
         sx={{ backgroundColor: "white", color: "#e0ddd5" }}
       >
         <Toolbar
-          sx={{ justifyContent: { xs: "space-between" }, gap: 1, height: 100 }}
+          sx={{
+            justifyContent: { xs: "flex-start", md: "space-between" },
+            gap: 1,
+            height: 100,
+          }}
         >
           <IconButton
             color="#d4452c"
@@ -66,35 +70,47 @@ const NavigationHeader = () => {
             <MenuIcon />
           </IconButton>
           {/* logo */}
+
           <Link to="/">
+            {" "}
             <Tooltip title="Home">
               <Box
-                component="img"
-                src={logo}
-                alt={"just the effing recipe logo"}
                 sx={{
-                  width: { xs: 50, md: 50, lg: 75 },
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: 1,
                 }}
-              />
+              >
+                <Box
+                  component="img"
+                  src={logo}
+                  alt={"just the effing recipe logo"}
+                  sx={{
+                    width: { xs: 50, md: 50, lg: 75 },
+                  }}
+                />
+                <Typography
+                  variant="h6"
+                  component="div"
+                  fontFamily='"Goudy Bookletter 1911", serif'
+                  fontWeight={600}
+                  sx={{
+                    textWrap: "nowrap",
+                    flexGrow: 1,
+                    fontSize: { xs: 20, lg: 35, xl: 40 },
+                    padding: { xs: 0, md: 2 },
+                    color: "#314f37",
+                    //textShadow: "1px 2px 0px #96a87cab",
+                  }}
+                >
+                  Just the Effing Recipe
+                </Typography>{" "}
+              </Box>
             </Tooltip>
           </Link>
-          <Typography
-            variant="h6"
-            component="div"
-            fontFamily='"Goudy Bookletter 1911", serif'
-            fontWeight={600}
-            sx={{
-              textWrap: "nowrap",
-              flexGrow: 1,
-              fontSize: { xs: 20, lg: 35, xl: 40 },
-              padding: { xs: 0, md: 2 },
-              color: "#314f37",
-              //textShadow: "1px 2px 0px #96a87cab",
-            }}
-          >
-            Just the Effing Recipe
-          </Typography>
-          {/* <SearchBar /> */}
+
           <Box
             sx={{
               display: { xs: "none", md: "flex" },

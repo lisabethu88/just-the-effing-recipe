@@ -5,6 +5,7 @@ import { useLocation, useParams } from "react-router-dom";
 import ErrorPage from "../components/ErrorPage";
 import picnic_bg from "../assets/picnic-bg.jpg";
 import AISection from "../components/AISection";
+import LoadingScreen from "../components/LoadingScreen";
 const Recipe = () => {
   const location = useLocation();
   const { meal } = location.state || {};
@@ -39,7 +40,7 @@ const Recipe = () => {
     return <ErrorPage />;
   }
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <LoadingScreen />;
   return (
     <Box component="main">
       <BackButton />{" "}

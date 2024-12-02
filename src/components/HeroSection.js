@@ -69,7 +69,7 @@ const HeroSection = () => {
           </Typography>{" "}
           and{" "}
           <Typography variant="span" sx={spanStyle}>
-            ads
+            ads{" "}
           </Typography>
           to find the{" "}
           <Typography variant="span" sx={spanStyle}>

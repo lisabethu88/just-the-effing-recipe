@@ -1,16 +1,24 @@
 import React from "react";
 import { Button, Typography, Box } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import picnic_bg from "../assets/picnic-bg.jpg";
 
 const BackButton = ({ handleSubmit, bgColor }) => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleBack = () => {
+    const pathSegments = location.pathname.split("/"); // Split the current path
+    pathSegments.pop(); // Remove the last segment to get the parent path
+    const parentPath = pathSegments.join("/") || "/"; // Join back to form the parent path
+    navigate(parentPath); // Navigate to the calculated parent path
+  };
 
   return (
     <Box sx={{ marginY: 3 }}>
       <Button
-        onClick={handleSubmit ? () => handleSubmit() : () => navigate(-1)}
+        onClick={handleSubmit ? () => handleSubmit() : handleBack}
         sx={{
           borderRadius: 0,
           transition: "0.3s ease-in-out",

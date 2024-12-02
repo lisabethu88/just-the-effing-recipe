@@ -110,7 +110,14 @@ Source: ${recipe.sourceName} (${recipe.sourceUrl})
       </Typography>
       {/* Show loading spinner */}
       {loading && (
-        <Box sx={{ display: "flex", justifyContent: "center", marginTop: 2 }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: 2,
+            color: "#d4452c",
+          }}
+        >
           <CircularProgress />
         </Box>
       )}
