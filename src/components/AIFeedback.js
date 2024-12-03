@@ -3,12 +3,26 @@ import { Typography, CircularProgress, Box } from "@mui/material";
 import BackButton from "./BackButton";
 import axios from "axios";
 import DisclaimerModal from "./DisclaimerModal";
-import LoadingScreen from "./LoadingScreen";
+import picnic_bg from "../assets/picnic-bg.jpg";
+import DOMPurify from "dompurify";
 
 const AIFeedback = ({ recipe, diet, setShowFeedback, setDiet }) => {
   const [feedback, setFeedback] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  function processFeedback(feedback) {
+    // Regex to match all Markdown-style code blocks like ```html ... ```
+    const regex = /```html([\s\S]*?)```/g;
+
+    // Remove all code blocks with the `html` marker
+    feedback = feedback.replace(regex, (match, codeContent) => {
+      return codeContent.trim(); // Keep the content within the block
+    });
+
+    // Sanitize the resulting HTML to ensure safety
+    return DOMPurify.sanitize(feedback);
+  }
+  const sanitizedFeedback = processFeedback(feedback);
 
   const handleSubmit = () => {
     setShowFeedback(false);
@@ -38,9 +52,9 @@ ${recipe.instructions}
 Source: ${recipe.sourceName} (${recipe.sourceUrl})
     `;
     };
-    const prompt = `Provide advice on how to modify the following recipe so that it suits a ${diet} diet:\n\nRecipe:\n${formatRecipe(
+    const prompt = `Provide advice on how to modify the following recipe to suit a ${diet} diet:\n\nRecipe:\n${formatRecipe(
       recipe
-    )}`;
+    )}. Format the response as HTML for easy display on a webpage.`;
 
     try {
       const response = await axios.post(
@@ -88,7 +102,6 @@ Source: ${recipe.sourceName} (${recipe.sourceUrl})
     };
 
     handleFetch();
-    console.log("recipe", recipe, "diet", diet);
   }, [recipe, diet]);
 
   return (
@@ -105,30 +118,12 @@ Source: ${recipe.sourceName} (${recipe.sourceUrl})
           textWrap: "wrap",
         }}
         textAlign={"center"}
+        margin={2}
       >
         {" "}
         Tips on making your meal {diet} friendly!
       </Typography>
-      {/* Show loading spinner */}
-      {loading && (
-        <Box component="main">
-          <Typography
-            variant="h1"
-            fontFamily='"Goudy Bookletter 1911", serif'
-            fontSize={"2rem"}
-            fontWeight={600}
-            letterSpacing={1}
-            color={"#d4452c"}
-            sx={{
-              textWrap: "wrap",
-            }}
-            textAlign={"center"}
-          >
-            Loading
-          </Typography>
-          <CircularProgress sx={{ color: "#314f37" }} />
-        </Box>
-      )}
+
       {/* Show error message */}
       {error && (
         <Typography variant="body1" color="error" sx={{ marginTop: 2 }}>
@@ -136,11 +131,57 @@ Source: ${recipe.sourceName} (${recipe.sourceUrl})
         </Typography>
       )}
       {/* Show feedback only when available */}
-      {feedback && (
-        <Typography variant="body1" sx={{ margin: "20px auto", maxWidth: 800 }}>
-          {feedback}
-        </Typography>
-      )}
+
+      <Box
+        sx={{
+          boxShadow: 2,
+          backgroundImage: `url(${picnic_bg})`,
+          backgroundSize: "75px",
+          backgroundPosition: "top left",
+          backgroundRepeat: "repeat",
+          padding: 3,
+          width: "fit-content",
+          maxWidth: 800,
+          margin: "0 auto"
+        }}
+      >
+        <Box
+          sx={{
+            width: "100%",
+            backgroundColor: "white",
+            padding: 3,
+            border: "3px solid #c7a47c",
+          }}
+        >
+          {/* Show loading spinner */}
+          {loading && (
+            <Box>
+              <Typography
+                variant="h1"
+                fontFamily='"Goudy Bookletter 1911", serif'
+                fontSize={"2rem"}
+                fontWeight={600}
+                letterSpacing={1}
+                color={"#d4452c"}
+                sx={{
+                  textWrap: "wrap",
+                }}
+                textAlign={"center"}
+              >
+                Loading
+              </Typography>
+              <CircularProgress sx={{ color: "#314f37" }} />
+            </Box>
+          )}
+          {feedback && !loading && (
+            <Typography
+              variant="body1"
+              dangerouslySetInnerHTML={{ __html: sanitizedFeedback }}
+            ></Typography>
+          )}
+        </Box>
+      </Box>
+
       <DisclaimerModal />
     </Box>
   );

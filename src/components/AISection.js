@@ -72,8 +72,13 @@ const AISection = ({ recipe }) => {
               renderInput={(params) => (
                 <TextField
                   {...params}
-                  label="Diet"
-                  sx={{ "& input": { fontFamily: "Nunito Sans" } }}
+                  label="Select Diet"
+                  sx={{
+                    "& input": { fontFamily: "Nunito Sans" },
+                    "& .MuiInputLabel-root": {
+                      fontFamily: "Nunito Sans",
+                    },
+                  }}
                 />
               )}
               onChange={(event, newValue) =>

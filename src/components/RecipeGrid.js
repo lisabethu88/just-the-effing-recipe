@@ -59,20 +59,10 @@ const RecipeGrid = ({ data }) => {
                       fontWeight: 800,
                       letterSpacing: 2,
                       fontSize: "1rem",
-                      // textShadow: "1px 2px 0px rgba(255,124,61,0.24)",
                     }}
                   >
                     {meal.title}
                   </Typography>
-                  {/* <Divider sx={{ marginY: 2 }} />
-                    <Typography
-                      variant="body2 "
-                      sx={{
-                        color: "text.secondary",
-                        fontFamily: "Nunito Sans",
-                        letterSpacing: 1,
-                      }}
-                    ></Typography> */}
                 </CardContent>
               </Card>
             </Link>

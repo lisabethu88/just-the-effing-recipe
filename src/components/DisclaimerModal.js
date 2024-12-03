@@ -35,6 +35,7 @@ export default function DisclaimerModal() {
           borderRadius: 0,
           color: "#d4452c",
           boxShadow: 2,
+          margin: 2
         }}
       >
         View Disclaimer

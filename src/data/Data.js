@@ -331,4 +331,6 @@ export const dietOptions = [
   { label: "Paleo", id: 8 },
   { label: "Primal", id: 9 },
   { label: "Whole30", id: 10 },
+  { label: "Heart Healthy", id: 11 },
+  { label: "Diabetic", id: 12 },
 ];

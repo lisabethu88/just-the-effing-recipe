@@ -89,7 +89,7 @@ const Recipe = () => {
       </Box>
       <Divider sx={{ color: "#d4452c", width: "75%" }} />
       <Grid2 container spacing={2} sx={{ margin: 2 }}>
-        <Grid2 item xs={12} md={6} sx={{ padding: 2, maxWidth: 500 }}>
+        <Grid2 item xs={12} md={6} sx={{ padding: 2, maxWidth: 300 }}>
           <Typography
             variant="h1"
             fontFamily='"Goudy Bookletter 1911", serif'
@@ -111,7 +111,7 @@ const Recipe = () => {
             ))}
           </ul>
         </Grid2>
-        <Grid2 item xs={12} md={6} sx={{ padding: 2, maxWidth: 500 }}>
+        <Grid2 item xs={12} md={6} sx={{ padding: 2, maxWidth: 300 }}>
           <Typography
             variant="h1"
             fontFamily='"Goudy Bookletter 1911", serif'
