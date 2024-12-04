@@ -17,37 +17,71 @@ import Tooltip from "@mui/material/Tooltip";
 import logo from "../assets/jter-logo.png";
 import { Link } from "react-router-dom";
 import { categoryPaths } from "../data/Constants";
+import FloralDivider from "./FloralDivider";
 
 const drawerWidth = 240;
 const navItems = ["All", "Meal Type", "Quick", "Cuisine", "About"];
 
-const NavigationHeader = () => {
+const NavigationHeader = (props) => {
+  const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
+
+    // if (mobileOpen) {
+    //   // Shift focus back to the menu button when Drawer is closed
+    //   const menuButton = document.querySelector('[aria-label="open drawer"]');
+    //   if (menuButton) menuButton.focus();
+    // }
   };
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
-      </Typography>
-      <Divider />
+      <Typography
+        variant="h6"
+        component="div"
+        fontFamily='"Goudy Bookletter 1911", serif'
+        fontWeight={600}
+        sx={{
+          my: 2,
+          color: "#314f37",
+        }}
+      >
+        Just the Effing Recipe
+      </Typography>{" "}
+      <FloralDivider />{" "}
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
+        {navItems.map((item, index) => (
+          <Link to={`${categoryPaths[item.toLowerCase()]}`} key={index}>
+            <ListItem key={item} disablePadding>
+              <ListItemButton sx={{ textAlign: "center" }}>
+                <ListItemText
+                  primary={item}
+                  sx={{
+                    "& .MuiTypography-root": {
+                      textDecoration: "none",
+                      color: "#e34425",
+                      fontWeight: 800,
+                      letterSpacing: 2,
+                      textTransform: "uppercase",
+                      fontFamily: "Nunito Sans",
+                    },
+                  }}
+                />
+              </ListItemButton>
+            </ListItem>
+          </Link>
         ))}
       </List>
     </Box>
   );
 
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
+
   return (
-    <Box component={"header"} sx={{ display: "flex", height: "fit-content" }}>
+    <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar
         component="nav"
@@ -65,7 +99,7 @@ const NavigationHeader = () => {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { md: "none" } }}
+            sx={{ mr: 2, display: { sm: "none" } }}
           >
             <MenuIcon />
           </IconButton>
@@ -102,7 +136,6 @@ const NavigationHeader = () => {
                     fontSize: { xs: 20, lg: 35, xl: 40 },
                     padding: { xs: 0, md: 2 },
                     color: "#314f37",
-                    //textShadow: "1px 2px 0px #96a87cab",
                   }}
                 >
                   Just the Effing Recipe
@@ -141,12 +174,12 @@ const NavigationHeader = () => {
       </AppBar>
       <nav>
         <Drawer
-          container={undefined}
+          container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: "block", sm: "none" },
