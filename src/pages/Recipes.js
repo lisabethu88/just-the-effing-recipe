@@ -94,13 +94,21 @@ const Recipes = () => {
       fetchQuickMeals();
     } else if (category === "meal-type") {
       fetchMealsByType();
-    } else {
+    } else if (category === "cuisine") {
       fetchMealsByCuisine();
+    } else {
+      setError(true);
     }
   }, []);
 
-  if (loading) return <LoadingScreen />;
+  useEffect(() => {
+    if (!subcategoriesEnum[subcategory]) {
+      setError(true);
+    }
+  }, [subcategory]);
   if (error) return <ErrorPage />;
+  if (loading) return <LoadingScreen />;
+
   return (
     <Box component="main">
       <PageTitle title={subcategoriesEnum[subcategory]} image={"croissant"} />{" "}

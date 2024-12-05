@@ -6,10 +6,13 @@ import PageTitle from "../components/PageTitle";
 import { categoriesEnum } from "../data/Constants";
 import { cuisines, mealTypes, quickTypes } from "../data/Data";
 import BackButton from "../components/BackButton";
+import ErrorPage from "../components/ErrorPage";
 
 const Subcategories = () => {
   const { category } = useParams();
+  const [error, setError] = useState(false);
   const [data, setData] = useState({});
+  console.log("category", category);
   useEffect(() => {
     switch (category) {
       case "meal-type":
@@ -22,10 +25,14 @@ const Subcategories = () => {
         setData(cuisines);
         break;
       default:
+        setError(true);
         break;
     }
   }, [category]);
 
+  if (error) {
+    return <ErrorPage />;
+  }
   return (
     <Box component="main">
       <PageTitle title={categoriesEnum[category]} image={"dutch-oven"} />

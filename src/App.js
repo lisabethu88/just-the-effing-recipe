@@ -8,6 +8,7 @@ import Categories from "./pages/Categories";
 import Subcategories from "./pages/Subcategories";
 import Recipes from "./pages/Recipes";
 import Recipe from "./pages/Recipe";
+import { Navigate } from "react-router-dom";
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
           path="/categories/:category/:subcategory/:recipeId"
           element={<Recipe />}
         />
-        <Route path="*" element={<Home />} /> {/* Handles unmatched routes */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 
       <Footer />
