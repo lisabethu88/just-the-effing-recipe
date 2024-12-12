@@ -53,25 +53,27 @@ const NavigationHeader = (props) => {
       <FloralDivider />{" "}
       <List>
         {navItems.map((item, index) => (
-          <Link to={`${categoryPaths[item.toLowerCase()]}`} key={index}>
-            <ListItem key={item} disablePadding>
-              <ListItemButton sx={{ textAlign: "center" }}>
-                <ListItemText
-                  primary={item}
-                  sx={{
-                    "& .MuiTypography-root": {
-                      textDecoration: "none",
-                      color: "#e34425",
-                      fontWeight: 800,
-                      letterSpacing: 2,
-                      textTransform: "uppercase",
-                      fontFamily: "Nunito Sans",
-                    },
-                  }}
-                />
-              </ListItemButton>
-            </ListItem>
-          </Link>
+          <ListItem key={item} disablePadding>
+            <ListItemButton
+              sx={{ textAlign: "center" }}
+              component={Link}
+              to={`${categoryPaths[item.toLowerCase()]}`}
+            >
+              <ListItemText
+                primary={item}
+                sx={{
+                  "& .MuiTypography-root": {
+                    textDecoration: "none",
+                    color: "#e34425",
+                    fontWeight: 800,
+                    letterSpacing: 2,
+                    textTransform: "uppercase",
+                    fontFamily: "Nunito Sans",
+                  },
+                }}
+              />
+            </ListItemButton>
+          </ListItem>
         ))}
       </List>
     </Box>
@@ -151,23 +153,24 @@ const NavigationHeader = (props) => {
             }}
           >
             {navItems.map((item, index) => (
-              <Link to={`${categoryPaths[item.toLowerCase()]}`} key={index}>
-                <Button
-                  sx={{
-                    textDecoration: "none",
-                    color: "#e34425",
-                    fontWeight: 700,
-                    letterSpacing: 2,
-                    ":hover": {
-                      backgroundColor: "#e0ddd5ab",
-                      borderRadius: 0,
-                      boxShadow: 2,
-                    },
-                  }}
-                >
-                  {item}
-                </Button>
-              </Link>
+              <Button
+                component={Link}
+                to={`${categoryPaths[item.toLowerCase()]}`}
+                key={index}
+                sx={{
+                  textDecoration: "none", // Ensures no underline
+                  color: "#e34425",
+                  fontWeight: 700,
+                  letterSpacing: 2,
+                  ":hover": {
+                    backgroundColor: "#e0ddd5ab",
+                    borderRadius: 0,
+                    boxShadow: 2,
+                  },
+                }}
+              >
+                {item}
+              </Button>
             ))}
           </Box>
         </Toolbar>

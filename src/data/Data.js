@@ -321,7 +321,7 @@ export const categories = [
 ];
 
 export const dietOptions = [
-  { label: "Gluten Free", id: 1 },
+  { label: "Gluten-Free", id: 1 },
   { label: "Ketogenic", id: 2 },
   { label: "Vegetarian", id: 3 },
   { label: "Lacto-Vegetarian", id: 4 },
@@ -331,6 +331,6 @@ export const dietOptions = [
   { label: "Paleo", id: 8 },
   { label: "Primal", id: 9 },
   { label: "Whole30", id: 10 },
-  { label: "Heart Healthy", id: 11 },
+  { label: "Heart-Healthy", id: 11 },
   { label: "Diabetic", id: 12 },
 ];

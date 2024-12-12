@@ -75,7 +75,7 @@ li {
 }
 
 :focus-visible {
-  outline: 5px solid #4caf50 !important; /* Green outline */
+  outline: 3px solid #4caf50 !important; /* Green outline */
   outline-offset: 2px !important; /* Adds space between the outline and element */
   border-radius: 4px !important; /* Rounded corners for the outline */
 }

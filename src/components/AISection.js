@@ -61,6 +61,7 @@ const AISection = ({ recipe }) => {
             }}
           >
             <Autocomplete
+              openOnFocus
               disablePortal
               options={dietOptions}
               sx={{
@@ -78,6 +79,20 @@ const AISection = ({ recipe }) => {
                     "& .MuiInputLabel-root": {
                       fontFamily: "Nunito Sans",
                     },
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === " ") {
+                      e.preventDefault();
+                      const listbox =
+                        document.querySelector('[role="listbox"]');
+                      if (listbox) {
+                        listbox.style.display =
+                          listbox.style.display === "none" ||
+                          !listbox.style.display
+                            ? "block"
+                            : "none";
+                      }
+                    }
                   }}
                 />
               )}
