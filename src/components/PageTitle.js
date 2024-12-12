@@ -19,6 +19,13 @@ const PageTitle = ({ title, image }) => {
     >
       {" "}
       <Box
+        alt={
+          image === "duck"
+            ? "Illustration of a cartoon-style duck paired with an herb, placed to the left of the page title."
+            : image === "dutch-oven"
+            ? "Illustration of a dutch oven paired with an herb, positioned to the left of the page title."
+            : "Illustration of a whole onion paired with an herb, located to the left of the page title."
+        }
         component={"img"}
         src={
           image === "duck" ? duck : image === "dutch-oven" ? dutch_oven : onion
@@ -50,6 +57,13 @@ const PageTitle = ({ title, image }) => {
         {title}
       </Typography>
       <Box
+        alt={
+          image === "duck"
+            ? "Illustration of a cartoon-style duck paired with an herb, placed to the right of the page title."
+            : image === "dutch-oven"
+            ? "Illustration of a dutch oven paired with an herb, positioned to the right of the page title."
+            : "Illustration of a whole onion paired with an herb, located to the right of the page title."
+        }
         component={"img"}
         src={
           image === "duck" ? duck : image === "dutch-oven" ? dutch_oven : onion
@@ -65,7 +79,6 @@ const PageTitle = ({ title, image }) => {
           },
           transform: "scaleX(-1)",
           marginX: 1,
-          //display: { xs: "none", sm: "block" },
         }}
       ></Box>
     </Box>

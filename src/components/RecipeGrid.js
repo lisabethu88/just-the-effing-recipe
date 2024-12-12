@@ -43,7 +43,7 @@ const RecipeGrid = ({ data }) => {
                 component="img"
                 sx={{ width: 250, height: 150 }}
                 image={meal.image}
-                alt={meal.title}
+                alt={`Image of ${meal.title}, a delicious dish served on a plate.`}
               />
               <CardContent sx={{ backgroundColor: "#e0ddd5", width: 250 }}>
                 <Typography

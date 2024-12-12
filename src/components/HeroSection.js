@@ -29,7 +29,9 @@ const HeroSection = () => {
       <Box
         component="img"
         src={welcome}
-        alt={"Welcome Recipe Card"}
+        alt={
+          "Illustration of stacked recipe cards, with the top card prominently displaying the word 'Welcome'."
+        }
         sx={{
           maxWidth: 500,
           width: "100%",
@@ -91,6 +93,7 @@ const HeroSection = () => {
               height: "fit-content",
               display: { xs: "none", sm: "block" },
             }}
+            alt="Illustration of a bell with a CSS animation causing it to wiggle back and forth."
           />
           <Link to={`${categoryPaths["all"]}`}>
             <Box
@@ -135,6 +138,7 @@ const HeroSection = () => {
                 height: "fit-content",
                 display: { xs: "none", sm: "block" },
               }}
+              alt="Illustration of a bell with a CSS animation causing it to wiggle back and forth."
             />
           </Box>
         </Box>

@@ -10,6 +10,9 @@ const ErrorPage = () => {
         component={"img"}
         src={whoops}
         sx={{ maxWidth: 500, margin: 5, width: "100%" }}
+        alt={
+          "Illustration of recipe cards, with the top card displaying the word 'Whoops,' used to indicate a page not found."
+        }
       ></Box>
       <Typography>
         The page you're looking for might have been moved, deleted, or never

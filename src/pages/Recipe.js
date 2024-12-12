@@ -59,6 +59,7 @@ const Recipe = () => {
       >
         <Box
           component="img"
+          alt={`Image of ${meal.title}, a delicious dish served on a plate.`}
           src={meal.image}
           sx={{
             maxWidth: "250px",

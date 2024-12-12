@@ -4,10 +4,13 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { dietOptions } from "../data/Data";
 import AIFeedback from "./AIFeedback";
+import DisclaimerModal from "./DisclaimerModal";
 
 const AISection = ({ recipe }) => {
   const [showFeedback, setShowFeedback] = useState(false);
   const [diet, setDiet] = useState("");
+  const [open, setOpen] = useState(false); // Track dropdown state
+
   const handleSubmit = (event) => {
     event.preventDefault();
     setShowFeedback(true);
@@ -61,7 +64,10 @@ const AISection = ({ recipe }) => {
             }}
           >
             <Autocomplete
+              open={open}
               openOnFocus
+              onOpen={() => setOpen(true)}
+              onClose={() => setOpen(false)}
               disablePortal
               options={dietOptions}
               sx={{
@@ -82,15 +88,9 @@ const AISection = ({ recipe }) => {
                   }}
                   onKeyDown={(e) => {
                     if (e.key === " ") {
-                      e.preventDefault();
-                      const listbox =
-                        document.querySelector('[role="listbox"]');
-                      if (listbox) {
-                        listbox.style.display =
-                          listbox.style.display === "none" ||
-                          !listbox.style.display
-                            ? "block"
-                            : "none";
+                      if (!open) {
+                        e.preventDefault();
+                        setOpen(true);
                       }
                     }
                   }}
@@ -127,6 +127,8 @@ const AISection = ({ recipe }) => {
           setDiet={setDiet}
         />
       )}
+
+      <DisclaimerModal />
     </Box>
   );
 };

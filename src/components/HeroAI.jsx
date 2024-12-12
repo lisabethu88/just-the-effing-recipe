@@ -64,6 +64,7 @@ const HeroAI = () => {
             sx={{
               border: "3px solid #c7a47c",
             }}
+            alt="Animated GIF demonstrating the AI Feedback section, showing a user selecting a diet and recieving suggestions on how to modify the recipe."
           ></Box>
         </Box>
         <Box
@@ -74,6 +75,7 @@ const HeroAI = () => {
             height: 300,
             marginBottom: 3,
           }}
+          alt="Illustration of a robot wearing a chef's hat and cooking in a kitchen."
         ></Box>
       </Box>
     </Box>

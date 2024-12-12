@@ -7,7 +7,9 @@ const FloralDivider = () => {
     <Box
       component={"img"}
       src={strawberry_border}
-      alt={"strawberry vine divider"}
+      alt={
+        "Illustration of a strawberry vine used as a decorative page divider, featuring green leaves, small strawberries, and curling tendrils."
+      }
       sx={{
         maxWidth: 350,
         width: "100%",

@@ -48,7 +48,7 @@ const CategoryGrid = ({ data }) => {
                 component="img"
                 sx={{ width: 250, height: 150 }}
                 image={category.image}
-                alt={category.title}
+                alt={`Image of ${category.title}, representing the category of ${category.title}.`}
               />
               <CardContent sx={{ backgroundColor: "#e0ddd5", width: 250 }}>
                 <Typography

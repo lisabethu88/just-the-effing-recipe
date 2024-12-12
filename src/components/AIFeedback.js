@@ -182,7 +182,6 @@ Source: ${recipe.sourceName} (${recipe.sourceUrl})
         </Box>
       </Box>
 
-      <DisclaimerModal />
     </Box>
   );
 };

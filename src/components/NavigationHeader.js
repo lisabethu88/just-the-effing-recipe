@@ -122,7 +122,9 @@ const NavigationHeader = (props) => {
                 <Box
                   component="img"
                   src={logo}
-                  alt={"just the effing recipe logo"}
+                  alt={
+                    "Website logo featuring a tomato designed as a pomodoro timer, with a green vine extending from its top."
+                  }
                   sx={{
                     width: { xs: 50, md: 50, lg: 75 },
                   }}

@@ -21,12 +21,14 @@ const About = () => {
             width: "100%",
             display: { xs: "none", sm: "block" },
           }}
+          alt="Illustration of a cartoon-style croissant paired with an herb placed to the left of the page title."
         ></Box>
 
         <Box
           component="img"
           src={about}
           sx={{ maxWidth: { xs: 300, md: 400 }, margin: 2 }}
+          alt="Illustration of stacked recipe cards, with the top card prominently displaying the word 'About'."
         ></Box>
         <Box
           component="img"
@@ -37,6 +39,7 @@ const About = () => {
             transform: "scaleX(-1)",
             display: { xs: "none", sm: "block" },
           }}
+          alt="Illustration of a cartoon-style croissant paired with an herb placed to the right of the page title."
         ></Box>
       </Box>
       <Box
