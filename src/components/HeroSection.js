@@ -105,7 +105,6 @@ const HeroSection = () => {
                   transform: "scale(0.95)",
                   transition: "0.2s ease-in-out",
                 },
-                marginBottom: 3,
               }}
             >
               <Button

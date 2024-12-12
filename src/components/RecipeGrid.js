@@ -14,11 +14,12 @@ const RecipeGrid = ({ data }) => {
             sm={6}
             md={4}
             key={index}
+            component={Link}
+            to={`${location.pathname}/${meal.id}`}
             className="category-grid"
             sx={{
               padding: 3,
               transition: "0.2s ease-in-out",
-
               ":hover": {
                 transform: "scale(1.05)",
                 transition: "0.2s ease-in-out",
@@ -26,46 +27,40 @@ const RecipeGrid = ({ data }) => {
               boxShadow: 2,
             }}
           >
-            <Link
-              to={`${location.pathname}/${meal.id}`}
-              className="no-underline !important"
-              state={{ meal }}
-            >
-              <Card
-                elevation={6}
-                sx={{
-                  cursor: "pointer",
-                  borderRadius: 0,
-                  transition: "0.2s ease-in-out",
+            <Card
+              elevation={6}
+              sx={{
+                cursor: "pointer",
+                borderRadius: 0,
+                transition: "0.2s ease-in-out",
 
-                  backgroundColor: "#e0ddd5",
-                  height: "100%",
-                }}
-              >
-                <CardMedia
-                  component="img"
-                  sx={{ width: 250, height: 150 }}
-                  image={meal.image}
-                  alt={meal.title}
-                />
-                <CardContent sx={{ backgroundColor: "#e0ddd5", width: 250 }}>
-                  <Typography
-                    variant="h6"
-                    align="left"
-                    textTransform={"uppercase"}
-                    sx={{
-                      textDecoration: "none",
-                      color: "#d4452c",
-                      fontWeight: 800,
-                      letterSpacing: 2,
-                      fontSize: "1rem",
-                    }}
-                  >
-                    {meal.title}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Link>
+                backgroundColor: "#e0ddd5",
+                height: "100%",
+              }}
+            >
+              <CardMedia
+                component="img"
+                sx={{ width: 250, height: 150 }}
+                image={meal.image}
+                alt={meal.title}
+              />
+              <CardContent sx={{ backgroundColor: "#e0ddd5", width: 250 }}>
+                <Typography
+                  variant="h6"
+                  align="left"
+                  textTransform={"uppercase"}
+                  sx={{
+                    textDecoration: "none",
+                    color: "#d4452c",
+                    fontWeight: 800,
+                    letterSpacing: 2,
+                    fontSize: "1rem",
+                  }}
+                >
+                  {meal.title}
+                </Typography>
+              </CardContent>
+            </Card>
           </Grid2>
         ))}
     </Grid2>

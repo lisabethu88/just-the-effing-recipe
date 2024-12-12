@@ -17,7 +17,7 @@ export default function Footer() {
         width: "100%",
         bottom: 0,
         position: "absolute",
-        //backgroundColor: "#e0ddd5",
+        backgroundColor: "white",
         height: 100,
         padding: 2,
       }}
