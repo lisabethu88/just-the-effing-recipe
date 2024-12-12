@@ -16,6 +16,7 @@ const RecipeGrid = ({ data }) => {
             key={index}
             component={Link}
             to={`${location.pathname}/${meal.id}`}
+            state={{ meal }}
             className="category-grid"
             sx={{
               padding: 3,
