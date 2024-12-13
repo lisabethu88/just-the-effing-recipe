@@ -77,7 +77,7 @@ const Recipe = () => {
           fontFamily='"Goudy Bookletter 1911", serif'
           fontSize={{ xs: "2rem", sm: "3rem" }}
           fontWeight={800}
-          color={"#ad1a00"}
+          color={"#314f37"}
           textAlign={"center"}
           letterSpacing={1}
           sx={{
@@ -92,11 +92,11 @@ const Recipe = () => {
       <Grid2 container spacing={2} sx={{ margin: 2 }}>
         <Grid2 item xs={12} md={6} sx={{ padding: 2, maxWidth: 300 }}>
           <Typography
-            variant="h1"
+            variant="h2"
             fontFamily='"Goudy Bookletter 1911", serif'
             fontSize={{ xs: "2rem", sm: "2rem" }}
             fontWeight={800}
-            color={"#314f37"}
+            color={"#ad1a00"}
             textAlign={"left"}
             letterSpacing={1}
             marginBottom={1}
@@ -118,7 +118,7 @@ const Recipe = () => {
             fontFamily='"Goudy Bookletter 1911", serif'
             fontSize={{ xs: "2rem", sm: "2rem" }}
             fontWeight={800}
-            color={"#314f37"}
+            color={"#ad1a00"}
             textAlign={"left"}
             letterSpacing={1}
             marginBottom={1}
@@ -132,7 +132,7 @@ const Recipe = () => {
             {recipe.analyzedInstructions.length > 0 ? (
               recipe.analyzedInstructions[0].steps.map((step) => (
                 <Typography key={step.number}>
-                  <Typography variant={"span"} fontWeight={800} color="#ad1a00">
+                  <Typography variant={"span"} fontWeight={800} color="#314f37">
                     {step.number}.
                   </Typography>{" "}
                   {step.step}
