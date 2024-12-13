@@ -23,7 +23,7 @@ const HeroSection = () => {
         alignItems: "center",
         flexDirection: "row",
         gap: 5,
-        flexWrap: { xs: "wrap", md: "nowrap" },
+        flexWrap: "wrap",
       }}
     >
       <Box
@@ -95,39 +95,40 @@ const HeroSection = () => {
             }}
             alt="Illustration of a bell with a CSS animation causing it to wiggle back and forth."
           />
-          <Link to={`${categoryPaths["all"]}`}>
-            <Box
-              sx={{
-                backgroundImage: `url(${picnic_bg})`,
-                padding: 1,
-                backgroundSize: "100px",
-                backgroundPosition: "top left",
-                backgroundRepeat: "repeat",
+          <Box
+            sx={{
+              backgroundImage: `url(${picnic_bg})`,
+              padding: 1,
+              backgroundSize: "100px",
+              backgroundPosition: "top left",
+              backgroundRepeat: "repeat",
+              transition: "0.2s ease-in-out",
+              ":hover": {
+                transform: "scale(0.95)",
                 transition: "0.2s ease-in-out",
-                ":hover": {
-                  transform: "scale(0.95)",
-                  transition: "0.2s ease-in-out",
-                },
+              },
+            }}
+          >
+            <Button
+              component={Link}
+              to={`${categoryPaths["all"]}`}
+              sx={{
+                backgroundColor: "#e0ddd5",
+                width: "fit-content",
+                padding: "1rem",
+                border: "3px solid #c7a47c",
+                fontFamily: "Nunito Sans",
+                fontSize: "1rem",
+                textTransform: "uppercase",
+                fontWeight: 800,
+                letterSpacing: 1,
+                color: "#d4452c",
+                textWrap: "nowrap",
               }}
             >
-              <Button
-                sx={{
-                  backgroundColor: "#e0ddd5",
-                  width: "fit-content",
-                  padding: "1rem",
-                  border: "3px solid #c7a47c",
-                  fontFamily: "Nunito Sans",
-                  fontSize: "1rem",
-                  textTransform: "uppercase",
-                  fontWeight: 800,
-                  letterSpacing: 1,
-                  color: "#d4452c",
-                }}
-              >
-                Click here to get started
-              </Button>
-            </Box>
-          </Link>
+              Click here to get started
+            </Button>
+          </Box>
           <Box sx={{ transform: "scaleX(-1)" }}>
             <Box
               component={"img"}
