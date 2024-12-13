@@ -26,7 +26,6 @@ const BackButton = ({ handleSubmit, bgColor }) => {
           margin: 0.5,
           boxShadow: 2,
           backgroundColor: "#5c5c5c59",
-          //   border: "2px solid #c7a47c",
           ":hover": {
             transition: "0.3s ease-in-out",
             padding: 0.5,
@@ -36,7 +35,6 @@ const BackButton = ({ handleSubmit, bgColor }) => {
             backgroundRepeat: "repeat",
             margin: 0,
             boxShadow: 2,
-            // border: "2px solid transparent",
           },
         }}
       >
@@ -48,17 +46,18 @@ const BackButton = ({ handleSubmit, bgColor }) => {
             padding: 1,
           }}
         >
-          <ArrowBackIcon sx={{ color: "#d4452c", marginRight: 1 }} />
+          <ArrowBackIcon sx={{ color: "#314f37", marginRight: 1 }} />
           <Typography
-            variant="h6"
+            variant="p"
             align="left"
             textTransform={"uppercase"}
             sx={{
               fontSize: "1rem",
               textDecoration: "none",
-              color: "#d4452c",
+              color: "#314f37",
               fontWeight: 800,
               letterSpacing: 2,
+              fontFamily: "Nunito Sans",
             }}
           >
             Go Back

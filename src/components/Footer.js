@@ -40,7 +40,7 @@ export default function Footer() {
       <Typography
         label=""
         sx={{
-          color: "#d4452c",
+          color: "#ad1a00",
           fontFamily: "Nunito Sans",
           fontWeight: 800,
           letterSpacing: 1,

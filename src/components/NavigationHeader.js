@@ -64,7 +64,7 @@ const NavigationHeader = (props) => {
                 sx={{
                   "& .MuiTypography-root": {
                     textDecoration: "none",
-                    color: "#e34425",
+                    color: "#ad1a00",
                     fontWeight: 800,
                     letterSpacing: 2,
                     textTransform: "uppercase",
@@ -91,13 +91,16 @@ const NavigationHeader = (props) => {
       >
         <Toolbar
           sx={{
-            justifyContent: { xs: "flex-start", md: "space-between" },
+            justifyContent: {
+              xs: "flex-start",
+              sm: "space-between",
+            },
             gap: 1,
             height: 100,
           }}
         >
           <IconButton
-            color="#d4452c"
+            color="#ad1a00"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
@@ -135,7 +138,7 @@ const NavigationHeader = (props) => {
                   fontFamily='"Goudy Bookletter 1911", serif'
                   fontWeight={600}
                   sx={{
-                    textWrap: "nowrap",
+                    textWrap: "wrap",
                     flexGrow: 1,
                     fontSize: { xs: 20, lg: 35, xl: 40 },
                     padding: { xs: 0, md: 2 },
@@ -150,29 +153,21 @@ const NavigationHeader = (props) => {
 
           <Box
             sx={{
-              display: { xs: "none", md: "flex" },
+              display: { xs: "none", sm: "flex" },
               textWrap: "nowrap",
+              flexWrap: "wrap",
+              gap: 2,
+              justifyContent: "flex-end",
             }}
           >
             {navItems.map((item, index) => (
-              <Button
-                component={Link}
+              <Link
                 to={`${categoryPaths[item.toLowerCase()]}`}
                 key={index}
-                sx={{
-                  textDecoration: "none", // Ensures no underline
-                  color: "#e34425",
-                  fontWeight: 700,
-                  letterSpacing: 2,
-                  ":hover": {
-                    backgroundColor: "#e0ddd5ab",
-                    borderRadius: 0,
-                    boxShadow: 2,
-                  },
-                }}
+                className="custom-link"
               >
                 {item}
-              </Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>

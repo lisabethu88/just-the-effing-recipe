@@ -35,7 +35,7 @@ const RecipeGrid = ({ data }) => {
                 borderRadius: 0,
                 transition: "0.2s ease-in-out",
 
-                backgroundColor: "#e0ddd5",
+                backgroundColor: "white",
                 height: "100%",
               }}
             >
@@ -45,17 +45,19 @@ const RecipeGrid = ({ data }) => {
                 image={meal.image}
                 alt={`Image of ${meal.title}, a delicious dish served on a plate.`}
               />
-              <CardContent sx={{ backgroundColor: "#e0ddd5", width: 250 }}>
+              <CardContent sx={{ backgroundColor: "white", width: 250 }}>
                 <Typography
-                  variant="h6"
+                  variant="h2"
                   align="left"
                   textTransform={"uppercase"}
                   sx={{
                     textDecoration: "none",
-                    color: "#d4452c",
+                    color: "#ad1a00",
                     fontWeight: 800,
                     letterSpacing: 2,
-                    fontSize: "1rem",
+                    fontSize: "1.25rem",
+                    fontFamily: "Nunito Sans",
+                    // textShadow: "1px 2px 0px rgba(255,124,61,0.24)",
                   }}
                 >
                   {meal.title}

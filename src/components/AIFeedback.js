@@ -113,7 +113,7 @@ Source: ${recipe.sourceName} (${recipe.sourceUrl})
         fontSize={{ xs: "2rem", sm: "3rem" }}
         fontWeight={600}
         letterSpacing={1}
-        color={"#d4452c"}
+        color={"#ad1a00"}
         sx={{
           textWrap: "wrap",
         }}
@@ -142,7 +142,7 @@ Source: ${recipe.sourceName} (${recipe.sourceUrl})
           padding: 3,
           width: "fit-content",
           maxWidth: 800,
-          margin: "0 auto"
+          margin: "0 auto",
         }}
       >
         <Box
@@ -162,7 +162,7 @@ Source: ${recipe.sourceName} (${recipe.sourceUrl})
                 fontSize={"2rem"}
                 fontWeight={600}
                 letterSpacing={1}
-                color={"#d4452c"}
+                color={"#ad1a00"}
                 sx={{
                   textWrap: "wrap",
                 }}
@@ -181,7 +181,6 @@ Source: ${recipe.sourceName} (${recipe.sourceUrl})
           )}
         </Box>
       </Box>
-
     </Box>
   );
 };

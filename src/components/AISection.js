@@ -38,7 +38,7 @@ const AISection = ({ recipe }) => {
             fontSize={{ xs: "2rem", sm: "3rem" }}
             fontWeight={600}
             letterSpacing={1}
-            color={"#d4452c"}
+            color={"#ad1a00"}
             sx={{
               textWrap: "wrap",
             }}
@@ -105,7 +105,7 @@ const AISection = ({ recipe }) => {
               variant="contained"
               color="primary"
               sx={{
-                backgroundColor: "#d4452c",
+                backgroundColor: "#ad1a00",
                 color: "#e0ddd5",
                 fontWeight: 800,
                 letterSpacing: 1,

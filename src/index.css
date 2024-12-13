@@ -26,7 +26,8 @@ code {
   width: fit-content;
 }
 
-h6 {
+h6,
+p {
   font-family: "Nunito Sans" !important;
 }
 
@@ -75,7 +76,27 @@ li {
 }
 
 :focus-visible {
-  outline: 3px solid #4caf50 !important; /* Green outline */
+  outline: 3px solid #ad1a00 !important; /* Green outline */
   outline-offset: 2px !important; /* Adds space between the outline and element */
   border-radius: 4px !important; /* Rounded corners for the outline */
+}
+
+.custom-link {
+  background-color: white;
+  text-decoration: none;
+  color: #ad1a00;
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-family: "Nunito Sans";
+  transition: all 0.3s ease; /* Add smooth transitions */
+  padding: 5px;
+}
+
+.custom-link:hover {
+  background-color: #e0ddd5ab;
+  border-radius: 0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Example box shadow */
+  color: #314f37;
 }

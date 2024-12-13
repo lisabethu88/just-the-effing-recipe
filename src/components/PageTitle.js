@@ -48,7 +48,7 @@ const PageTitle = ({ title, image }) => {
         fontSize={{ xs: "2rem", sm: "3rem" }}
         fontWeight={600}
         letterSpacing={1}
-        color={"#d4452c"}
+        color={"#314f37"}
         sx={{
           textWrap: "wrap",
         }}

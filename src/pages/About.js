@@ -8,7 +8,7 @@ const About = () => {
     fontFamily: '"Goudy Bookletter 1911", serif',
     textTransform: "none",
     fontSize: "2rem",
-    color: "#d4452c",
+    color: "#ad1a00",
   };
   return (
     <Box component="main">

@@ -1,5 +1,5 @@
 import React from "react";
-import welcome from "../assets/recipe-cards.png";
+import welcome from "../assets/welcome.png";
 import { Box, Typography, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { categoryPaths } from "../data/Constants";
@@ -11,7 +11,7 @@ const HeroSection = () => {
     fontFamily: '"Goudy Bookletter 1911", serif',
     textTransform: "lowercase",
     fontSize: "2rem",
-    color: "#d4452c",
+    color: "#ad1a00",
   };
   return (
     <Box
@@ -118,11 +118,11 @@ const HeroSection = () => {
                 padding: "1rem",
                 border: "3px solid #c7a47c",
                 fontFamily: "Nunito Sans",
-                fontSize: "1rem",
+                fontSize: { xs: "1rem", sm: "1.2rem" },
                 textTransform: "uppercase",
                 fontWeight: 800,
                 letterSpacing: 1,
-                color: "#d4452c",
+                color: "#2F4B33",
                 textWrap: "nowrap",
               }}
             >

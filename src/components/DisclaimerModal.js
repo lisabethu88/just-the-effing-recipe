@@ -33,9 +33,9 @@ export default function DisclaimerModal() {
           fontFamily: "Nunito Sans",
           letterSpacing: 1,
           borderRadius: 0,
-          color: "#d4452c",
+          color: "#ad1a00",
           boxShadow: 2,
-          margin: 2
+          margin: 2,
         }}
       >
         View Disclaimer
