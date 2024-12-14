@@ -47,10 +47,9 @@ const AISection = ({ recipe }) => {
             Customize this Recipe with OpenAI
           </Typography>
           <Typography variant="body1" sx={{ maxWidth: 600 }}>
-            Customize this Recipe with OpenAI Select your diet below, and OpenAI
-            will provide tailored tips to adjust this recipe just for you. Get
-            suggestions on ingredient swaps, portion adjustments, and more to
-            match your dietary needs!
+            Select your diet below, and OpenAI will provide tailored tips to
+            adjust this recipe just for you. Get suggestions on ingredient
+            swaps, portion adjustments, and more to match your dietary needs!
           </Typography>
 
           <Box
