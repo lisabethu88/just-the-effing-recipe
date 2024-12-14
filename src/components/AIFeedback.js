@@ -144,6 +144,7 @@ Source: ${recipe.sourceName} (${recipe.sourceUrl})
           maxWidth: 800,
           margin: "0 auto",
         }}
+        aria-live="assertive"
       >
         <Box
           sx={{
@@ -177,6 +178,7 @@ Source: ${recipe.sourceName} (${recipe.sourceUrl})
             <Typography
               variant="body1"
               dangerouslySetInnerHTML={{ __html: sanitizedFeedback }}
+              aria-live="assertive"
             ></Typography>
           )}
         </Box>
