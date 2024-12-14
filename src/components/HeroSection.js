@@ -84,7 +84,7 @@ const HeroSection = () => {
         </Typography>
 
         <Box sx={{ display: "flex", alignItems: "flex-start" }}>
-          <Box
+          {/* <Box
             component={"img"}
             src={bell}
             className="wiggle-button"
@@ -94,8 +94,9 @@ const HeroSection = () => {
               display: { xs: "none", sm: "block" },
             }}
             alt="Illustration of a bell with a CSS animation causing it to wiggle back and forth."
-          />
+          /> */}
           <Box
+            className="wiggle-button"
             sx={{
               backgroundImage: `url(${picnic_bg})`,
               padding: 1,
@@ -129,7 +130,7 @@ const HeroSection = () => {
               Click here to get started
             </Button>
           </Box>
-          <Box sx={{ transform: "scaleX(-1)" }}>
+          {/* <Box sx={{ transform: "scaleX(-1)" }}>
             <Box
               component={"img"}
               src={bell}
@@ -141,7 +142,7 @@ const HeroSection = () => {
               }}
               alt="Illustration of a bell with a CSS animation causing it to wiggle back and forth."
             />
-          </Box>
+          </Box> */}
         </Box>
       </Box>
     </Box>
