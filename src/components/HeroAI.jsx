@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
 
 import picnic_bg from "../assets/picnic-bg.jpg";
 import ai_gif from "../assets/ai_gif.gif";
@@ -15,8 +15,9 @@ const HeroAI = () => {
         alignItems: "center",
         gap: 2,
         backgroundColor: "#e0ddd5",
-        padding: "5rem",
+        paddingX: "1rem",
         width: "100%",
+        paddingY: "3rem",
       }}
     >
       <Typography
@@ -31,11 +32,15 @@ const HeroAI = () => {
         }}
         textAlign={"center"}
       >
-        Transform Any Recipe to Suit Your Diet with AI!
+        Transform Any Recipe to Fit Your Diet with AI!
       </Typography>
-      <Typography textAlign={"center"} sx={{ fontFamily: "Nunito Sans" }}>
-        Our intelligent recipe assistant can adapt any recipe to your dietary
-        needs, whether it's vegan, gluten-free, or more.
+      <Typography
+        variant={"body1"}
+        textAlign={"center"}
+        sx={{ fontFamily: "Nunito Sans", color: "#181818", fontWeight: 600 }}
+      >
+        Our smart recipe assistant can change any recipe to match your diet,
+        whether it's vegan, gluten-free, or something else.
       </Typography>
       <Box
         sx={{

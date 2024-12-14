@@ -61,7 +61,6 @@ const CategoryGrid = ({ data }) => {
                     letterSpacing: 2,
                     fontSize: "1.25rem",
                     fontFamily: "Nunito Sans",
-                    // textShadow: "1px 2px 0px rgba(255,124,61,0.24)",
                   }}
                 >
                   {category.title}
@@ -71,9 +70,10 @@ const CategoryGrid = ({ data }) => {
                 <Typography
                   variant="body2"
                   sx={{
-                    color: "text.secondary",
+                    color: "#181818",
                     fontFamily: "Nunito Sans",
                     letterSpacing: 1,
+                    fontWeight: 600,
                   }}
                 >
                   {category.description}

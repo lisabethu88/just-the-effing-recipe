@@ -1,9 +1,8 @@
 import React from "react";
 import welcome from "../assets/welcome.png";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button, Divider } from "@mui/material";
 import { Link } from "react-router-dom";
 import { categoryPaths } from "../data/Constants";
-import bell from "../assets/bell.png";
 import picnic_bg from "../assets/picnic-bg.jpg";
 
 const HeroSection = () => {
@@ -23,7 +22,7 @@ const HeroSection = () => {
         alignItems: "center",
         flexDirection: "row",
         gap: 5,
-        flexWrap: "wrap",
+        flexWrap: { xs: "wrap", md: "nowrap" },
       }}
     >
       <Box
@@ -43,10 +42,10 @@ const HeroSection = () => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          alignItems: "center",
+          alignItems: { xs: "center", md: "flex-start" },
           width: "100%",
           maxWidth: 500,
-          textAlign: "center",
+          textAlign: { xs: "center", md: "left" },
           marginX: 2,
           gap: 4,
         }}
@@ -84,32 +83,6 @@ const HeroSection = () => {
         </Typography>
 
         <Box sx={{ display: "flex", alignItems: "flex-start" }}>
-          {/* <Box
-            component={"img"}
-            src={bell}
-            className="wiggle-button"
-            sx={{
-              maxWidth: "75px",
-              height: "fit-content",
-              display: { xs: "none", sm: "block" },
-            }}
-            alt="Illustration of a bell with a CSS animation causing it to wiggle back and forth."
-          /> */}
-          {/* <Box
-            className="wiggle-button"
-            sx={{
-              backgroundImage: `url(${picnic_bg})`,
-              padding: 1,
-              backgroundSize: "100px",
-              backgroundPosition: "top left",
-              backgroundRepeat: "repeat",
-              transition: "0.2s ease-in-out",
-              ":hover": {
-                transform: "scale(0.95)",
-                transition: "0.2s ease-in-out",
-              },
-            }}
-          > */}
           <Button
             className="wiggle-button"
             component={Link}
@@ -128,6 +101,7 @@ const HeroSection = () => {
             }}
           >
             <Typography
+              aria-label="Explore Categories"
               sx={{
                 backgroundColor: "#e0ddd5",
                 padding: "1rem",
@@ -144,20 +118,6 @@ const HeroSection = () => {
               Click here to get started
             </Typography>
           </Button>
-          {/* </Box> */}
-          {/* <Box sx={{ transform: "scaleX(-1)" }}>
-            <Box
-              component={"img"}
-              src={bell}
-              className="wiggle-button"
-              sx={{
-                maxWidth: "75px",
-                height: "fit-content",
-                display: { xs: "none", sm: "block" },
-              }}
-              alt="Illustration of a bell with a CSS animation causing it to wiggle back and forth."
-            />
-          </Box> */}
         </Box>
       </Box>
     </Box>
