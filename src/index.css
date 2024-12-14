@@ -99,3 +99,11 @@ li {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Example box shadow */
   color: #314f37;
 }
+
+label {
+  font-family: "Nunito Sans" !important;
+}
+
+#diet-select {
+  text-align: left;
+}

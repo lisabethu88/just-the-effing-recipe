@@ -95,7 +95,7 @@ const HeroSection = () => {
             }}
             alt="Illustration of a bell with a CSS animation causing it to wiggle back and forth."
           /> */}
-          <Box
+          {/* <Box
             className="wiggle-button"
             sx={{
               backgroundImage: `url(${picnic_bg})`,
@@ -109,13 +109,27 @@ const HeroSection = () => {
                 transition: "0.2s ease-in-out",
               },
             }}
+          > */}
+          <Button
+            className="wiggle-button"
+            component={Link}
+            to={`${categoryPaths["all"]}`}
+            sx={{
+              width: "fit-content",
+
+              backgroundImage: `url(${picnic_bg})`,
+              backgroundSize: "100px",
+              backgroundPosition: "top left",
+              backgroundRepeat: "repeat",
+              transition: "0.2s ease-in-out",
+              ":hover": {
+                animation: "none",
+              },
+            }}
           >
-            <Button
-              component={Link}
-              to={`${categoryPaths["all"]}`}
+            <Typography
               sx={{
                 backgroundColor: "#e0ddd5",
-                width: "fit-content",
                 padding: "1rem",
                 border: "3px solid #c7a47c",
                 fontFamily: "Nunito Sans",
@@ -128,8 +142,9 @@ const HeroSection = () => {
               }}
             >
               Click here to get started
-            </Button>
-          </Box>
+            </Typography>
+          </Button>
+          {/* </Box> */}
           {/* <Box sx={{ transform: "scaleX(-1)" }}>
             <Box
               component={"img"}

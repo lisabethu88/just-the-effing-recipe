@@ -90,7 +90,12 @@ const Recipe = () => {
       </Box>
       <Divider sx={{ color: "#ad1a00", width: "75%" }} />
       <Grid2 container spacing={2} sx={{ margin: 2 }}>
-        <Grid2 item xs={12} md={6} sx={{ padding: 2, maxWidth: 300 }}>
+        <Grid2
+          item
+          xs={12}
+          md={6}
+          sx={{ padding: 2, width: "100%", maxWidth: { xs: "100%", sm: 300 } }}
+        >
           <Typography
             variant="h2"
             fontFamily='"Goudy Bookletter 1911", serif'
@@ -112,7 +117,12 @@ const Recipe = () => {
             ))}
           </ul>
         </Grid2>
-        <Grid2 item xs={12} md={6} sx={{ padding: 2, maxWidth: 300 }}>
+        <Grid2
+          item
+          xs={12}
+          md={6}
+          sx={{ padding: 2, width: "100%", maxWidth: { xs: "100%", sm: 300 } }}
+        >
           <Typography
             variant="h1"
             fontFamily='"Goudy Bookletter 1911", serif'
@@ -128,7 +138,7 @@ const Recipe = () => {
           >
             Instructions
           </Typography>
-          <Typography sx={{ maxWidth: 300 }}>
+          <Box>
             {recipe.analyzedInstructions.length > 0 ? (
               recipe.analyzedInstructions[0].steps.map((step) => (
                 <Typography key={step.number}>
@@ -141,7 +151,7 @@ const Recipe = () => {
             ) : (
               <p>No instructions available.</p>
             )}
-          </Typography>
+          </Box>
         </Grid2>
       </Grid2>
       <AISection recipe={recipe} />
